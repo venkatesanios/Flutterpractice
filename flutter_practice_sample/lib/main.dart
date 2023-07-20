@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice_sample/core/app/app.router.dart';
 import 'package:flutter_practice_sample/init_app.dart';
 import 'package:stacked_services/stacked_services.dart';
- 
+
 void main() {
   runZonedGuarded<Future<void>>(() async {
     await initApp();
-    runApp(const MyApp());
+    runApp(const SafeArea(child: MyApp()));
   }, (Object error, StackTrace stackTrace) {
     //CrashReporting.reportCrash(error, stackTrace);
   });
@@ -27,5 +27,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
- 
- 

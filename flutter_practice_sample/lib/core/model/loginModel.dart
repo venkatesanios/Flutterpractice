@@ -1,54 +1,42 @@
-
 import 'dart:convert';
 
-GroupUserResponse groupUserResponseFromJson(String str) => GroupUserResponse.fromJson(json.decode(str));
+LoginModel loginModelFromJson(String str) =>
+    LoginModel.fromJson(json.decode(str));
 
-String groupUserResponseToJson(GroupUserResponse data) => json.encode(data.toJson());
+String loginModelToJson(LoginModel data) => json.encode(data.toJson());
 
-class GroupUserResponse {
-    int? code;
-    String? message;
-    List<GroupData>? data;
+class LoginModel {
+  String? mobileCountryCode;
+  String? mobileNumber;
+  String? password;
+  String? language;
+  String? deviceToken;
+  String? macAddress;
 
-    GroupUserResponse({
-        this.code,
-        this.message,
-        this.data,
-    });
+  LoginModel({
+    this.mobileCountryCode,
+    this.mobileNumber,
+    this.password,
+    this.language,
+    this.deviceToken,
+    this.macAddress,
+  });
 
-    factory GroupUserResponse.fromJson(Map<String, dynamic> json) => GroupUserResponse(
-        code: json["code"],
-        message: json["message"],
-        data: json["data"] == null ? [] : List<GroupData>.from(json["data"]!.map((x) => GroupData.fromJson(x))),
-    );
+  factory LoginModel.fromJson(Map<String, dynamic> json) => LoginModel(
+        mobileCountryCode: json["mobileCountryCode"],
+        mobileNumber: json["mobileNumber"],
+        password: json["password"],
+        language: json["language"],
+        deviceToken: json["deviceToken"],
+        macAddress: json["macAddress"],
+      );
 
-    Map<String, dynamic> toJson() => {
-        "code": code,
-        "message": message,
-        "data": data == null ? [] : List<dynamic>.from(data!.map((x) => x.toJson())),
-    };
-}
-
-class GroupData {
-    int? userGroupId;
-    int? userId;
-    String? groupName;
-
-    GroupData({
-        this.userGroupId,
-        this.userId,
-        this.groupName,
-    });
-
-    factory GroupData.fromJson(Map<String, dynamic> json) => GroupData(
-        userGroupId: json["userGroupId"],
-        userId: json["userId"],
-        groupName: json["groupName"],
-    );
-
-    Map<String, dynamic> toJson() => {
-        "userGroupId": userGroupId,
-        "userId": userId,
-        "groupName": groupName,
-    };
+  Map<String, dynamic> toJson() => {
+        "mobileCountryCode": mobileCountryCode,
+        "mobileNumber": mobileNumber,
+        "password": password,
+        "language": language,
+        "deviceToken": deviceToken,
+        "macAddress": macAddress,
+      };
 }
