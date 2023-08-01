@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice_sample/ui/views/indiualcard.dart';
+import 'package:flutter_practice_sample/ui/views/home/indiualcard.dart';
 
 class Homepageview extends StatefulWidget {
   const Homepageview({super.key});
@@ -64,23 +64,30 @@ class _HomepageviewState extends State<Homepageview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home Page')),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(16),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3, // Number of columns in the grid
-          crossAxisSpacing: 6, // Spacing between columns
-          mainAxisSpacing: 6, // Spacing between rows
+      appBar: AppBar(
+        title: const Text('Home Page'),
+        backgroundColor: Color.fromARGB(206, 245, 186, 10),
+      ),
+      body: Container(
+        //Color.fromARGB(206, 245, 186, 10),Color.fromARGB(255, 252, 242, 217),
+        color: Color.fromARGB(255, 252, 242, 217),
+        child: GridView.builder(
+          padding: const EdgeInsets.all(40),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, // Number of columns in the grid
+            crossAxisSpacing: 30, // Spacing between columns
+            mainAxisSpacing: 20, // Spacing between rows
+          ),
+          itemCount: cardData.length,
+          itemBuilder: (context, index) {
+            final cardInfo = cardData[index];
+            return IndividualCard(
+              title: cardInfo['title'],
+              description: cardInfo['description'],
+              iconData: cardInfo['iconData'],
+            );
+          },
         ),
-        itemCount: cardData.length,
-        itemBuilder: (context, index) {
-          final cardInfo = cardData[index];
-          return IndividualCard(
-            title: cardInfo['title'],
-            description: cardInfo['description'],
-            iconData: cardInfo['iconData'],
-          );
-        },
       ),
     );
   }

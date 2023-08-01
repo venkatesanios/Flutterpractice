@@ -20,10 +20,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Student Attendance',
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: StackedRouter().onGenerateRoute,
-      navigatorKey: StackedService.navigatorKey,
-    );
+        title: 'Student Attendance',
+        debugShowCheckedModeBanner: false,
+        onGenerateRoute: StackedRouter().onGenerateRoute,
+        navigatorKey: StackedService.navigatorKey,
+        color: Colors.amber);
   }
 }

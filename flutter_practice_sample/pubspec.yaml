@@ -37,6 +37,8 @@ dependencies:
   dropdown_textfield : ^1.0.8
   maps_toolkit: ^2.0.1
   dio: ^5.1.2  
+  text_scroll: ^0.2.0
+  
 
 
 dev_dependencies:
@@ -49,6 +51,7 @@ dev_dependencies:
   flutter_native_splash:
   flutter_launcher_icons: ^0.9.2
   pretty_dio_logger: ^1.2.0-beta-1
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

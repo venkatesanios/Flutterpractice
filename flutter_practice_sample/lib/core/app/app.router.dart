@@ -9,7 +9,7 @@ import 'package:flutter/material.dart' as _i5;
 import 'package:flutter/material.dart';
 import 'package:flutter_practice_sample/ui/views/group_unit/group_unit_view.dart'
     as _i3;
-import 'package:flutter_practice_sample/ui/views/homepageview.dart' as _i4;
+import 'package:flutter_practice_sample/ui/views/home/homepageview.dart' as _i4;
 import 'package:flutter_practice_sample/ui/views/login/login_view.dart' as _i2;
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i6;
