@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_sample/ui/views/createAccount/createAccount.dart';
 import 'package:flutter_practice_sample/ui/views/home/homepageview.dart';
 import 'package:flutter_practice_sample/ui/views/test.dart';
 
@@ -55,7 +56,7 @@ class _LoginViewState extends State<LoginView> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const MarqueeView()));
+                                  builder: (context) => const CreateAccount()));
                         },
                         child: const Text('Sign in')),
                   ],
