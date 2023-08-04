@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:flutter_practice_sample/ui/views/createAccount/dropdown.dart';
 
 const List<String> list = <String>['India', 'Pakistan', 'China', 'America'];
 
@@ -175,6 +176,19 @@ class _AccountPageState extends State<AccountPage> {
                     child: Text(value),
                   );
                 }).toList(),
+              ),
+
+              const SizedBox(height: 16),
+              CustomDropdown(
+                items: list,
+                selectedValue: list[0],
+                // onChanged: (newValue) {
+                //   setState(() {
+                //     print('Selected: $newValue');
+                //    // ValueChanged = newValue!;
+
+                //   });
+                // },
               ),
 
               const SizedBox(height: 16),
